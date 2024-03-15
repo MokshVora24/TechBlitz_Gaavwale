@@ -18,18 +18,6 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Password is required"],
     },
-    gender: {
-      type: String,
-      required: true,
-      enum: ["male", "female"],
-    },
-    profilePic: {
-      type: String,
-      default: "",
-    },
-    refreshToken: {
-      type: String,
-    },
   },
   { timestamps: true }
 );

@@ -1,25 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
-import useLogin from '../../hooks/useLogin';
+import useLogin from '../hooks/useLogin';
+import Signup from './Signup';
 
 const Login = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [showComponent2, setShowComponent2] = useState(false);
 
     const { loading, login } = useLogin()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await login(username, password)
+        // await login(username, password)
+        setShowComponent2(true);
     }
 
     return (
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
             <div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-0'>
                 <h1 className='text-3xl font-semibold text-center text-white'>
-                    Login <span className='text-blue-500'>ChatApp</span>
+                    Login <span className='text-blue-500'>Saathi</span>
                 </h1>
 
                 <form onSubmit={handleSubmit}>
@@ -50,11 +53,13 @@ const Login = () => {
                     <Link to='/signup' href="#" className='text-sm text-white hover:underline hover:text-blue-600 mt-2 inline-block'>
                         {"Don't"} have an account?
                     </Link>
+
                     <div>
-                        <button className='btn btn-block btn-sm bg-blue-600 text-white mt-5'
+
+                        <Link to="/"><button className='btn btn-block btn-sm bg-blue-600 text-white mt-5'
                             disabled={loading}>
                             {loading ? <span className='loading loading-spinner' ></span> : 'Login'}
-                        </button>
+                        </button></Link>
                     </div>
                 </form>
             </div>

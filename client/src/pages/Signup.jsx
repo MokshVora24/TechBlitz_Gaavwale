@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
-import GenderCheckBox from './GenderCheckBox.jsx'
 import { Link } from 'react-router-dom'
-import useSignup from '../../hooks/useSignup.js'
+import useSignup from '../hooks/useSignup.js'
 
 const Signup = () => {
 
@@ -10,13 +9,10 @@ const Signup = () => {
         fullName: '',
         username: '',
         password: '',
-        confirmPassword: '',
-        gender: ''
+        confirmPassword: ''
     })
 
-    const handleCheckBoxChange = (gender) => {
-        setIputs({ ...inputs, gender })
-    }
+
 
     const { loading, signup } = useSignup();
 
@@ -31,7 +27,7 @@ const Signup = () => {
         <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
             <div className='w-full p-6 rounded-lg shadow-md bg-grey-900 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
                 <h1 className='text-3xl font-semibold text-center text-white'>
-                    Sign Up <span className='text-blue-500'>ChatApp</span>
+                    Sign Up <span className='text-blue-500'>Saathi</span>
                 </h1>
 
                 <form onSubmit={handleSubmit}>
@@ -84,16 +80,15 @@ const Signup = () => {
                         />
                     </div>
 
-                    <GenderCheckBox onCheckboxChange={handleCheckBoxChange} selectedGender={inputs.gender} />
-
                     <Link to='/login' href="#" className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block text-white'>
                         Already have an account?
                     </Link>
                     <div>
-                        <button className='btn btn-block btn-sm bg-blue-600 text-white mt-5'
+
+                        <Link to="/"><button className='btn btn-block btn-sm bg-blue-600 text-white mt-5'
                             disabled={loading}>
                             {loading ? <span className='loading loading-spinner' ></span> : "Sign Up"}
-                        </button>
+                        </button></Link>
                     </div>
                 </form>
             </div>
