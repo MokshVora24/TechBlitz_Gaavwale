@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const OrderMedicinePage = () => {
   const [medicine, setMedicine] = useState('');
@@ -17,7 +18,7 @@ const OrderMedicinePage = () => {
 
   const handlePlaceOrder = () => {
     // Your logic for placing the order goes here
-    alert('Order placed successfully!');
+    toast.success('Order placed successfully!');
     setMedicineList([]);
   };
 
