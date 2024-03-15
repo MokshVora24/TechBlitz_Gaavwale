@@ -14,12 +14,9 @@
     "mapbox-gl": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
     "react-hot-toast": "^2.4.1",
+    "react-map-gl": "^7.1.7",
     "react-router-dom": "^6.22.3"
-=======
-    "react-map-gl": "^7.1.7"
->>>>>>> 1774f6fcdc871e64a707a1d08a27804249c2e92d
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
