@@ -1,25 +1,50 @@
-// MapComponent.jsx
-import React from 'react';
-import ReactMapGL from 'react-map-gl';
+import React, { useState } from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const MapComponent = () => {
-  const mapStyle = 'mapbox://styles/mapbox/streets-v11';
+  const [markers, setMarkers] = useState([]);
 
-  const [viewport, setViewport] = React.useState({
+  const mapContainerStyle = {
     width: '100%',
-    height: '400px',
-    latitude: 37.7577,
-    longitude: -122.4376,
-    zoom: 8,
-  });
+    height: '100vh', // Set the map height to 100vh
+  };
+
+  const center = {
+    lat: -34.397,
+    lng: 150.644,
+  };
+
+  const handleMapClick = (e) => {
+    const newMarker = {
+      lat: e.latLng.lat(),
+      lng: e.latLng.lng(),
+    };
+    setMarkers([...markers, newMarker]);
+  };
+
+  const handleMarkerClick = (index) => {
+    const newMarkers = [...markers];
+    newMarkers.splice(index, 1);
+    setMarkers(newMarkers);
+  };
 
   return (
-    <ReactMapGL
-      {...viewport}
-      mapStyle={mapStyle}
-      mapboxApiAccessToken={`pk.eyJ1Ijoic2FtejI0MDciLCJhIjoiY2x0c2MyNHd6MHJ6eDJqbmp0YjA4bjEwaiJ9.9lHNr-T6cD4VN9suXK1nIg`}
-      onViewportChange={(viewport) => setViewport(viewport)}
-    />
+    <LoadScript googleMapsApiKey="AIzaSyDDLv9kVDyasgpYJ7zzzFcOM3R4cTHFB5U">
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        center={center}
+        zoom={10}
+        onClick={handleMapClick}
+      >
+        {markers.map((marker, index) => (
+          <Marker
+            key={index}
+            position={marker}
+            onClick={() => handleMarkerClick(index)}
+          />
+        ))}
+      </GoogleMap>
+    </LoadScript>
   );
 };
 
