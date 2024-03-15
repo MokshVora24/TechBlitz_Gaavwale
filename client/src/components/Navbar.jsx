@@ -1,32 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import logo from '../assets/logo.jpg';
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollHeight = window.pageYOffset || document.documentElement.scrollTop;
+      setIsScrolled(scrollHeight > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-800 py-4 px-6">
-      <div className="flex items-center justify-between">
-        <div className="text-white font-bold text-lg">My App</div>
-        <ul className="flex space-x-6 text-gray-300">
-          <li>
-            <a href="#" className="hover:text-white">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-white">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-white">
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="#" className="hover:text-white">
-              Contact
-            </a>
-          </li>
-        </ul>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 py-6 px-8 flex justify-center transition-all duration-300 ${
+        isScrolled ? 'bg-gray-100' : 'bg-transparent'
+      }`}
+    >
+      <div className="flex items-center">
+        <img src={logo} alt="SAATHI Logo" className="h-12 mr-4" />
+        <span className="text-slate-900 font-bold text-3xl">Empowering Elders, Enriching Lives</span>
       </div>
     </nav>
   );
