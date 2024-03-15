@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 
 const OrderGroceriesPage = () => {
   const [groceryItem, setGroceryItem] = useState('');
+  const [quantity, setQuantity] = useState('');
   const [groceryList, setGroceryList] = useState([]);
 
   const handleChange = (e) => {
-    setGroceryItem(e.target.value);
+    const { name, value } = e.target;
+    if (name === 'groceryItem') {
+      setGroceryItem(value);
+    } else if (name === 'quantity') {
+      setQuantity(value);
+    }
   };
 
   const handleAddGrocery = () => {
     if (groceryItem.trim() !== '') {
-      setGroceryList([...groceryList, groceryItem]);
+      const newItem = `${quantity} ${groceryItem}`;
+      setGroceryList([...groceryList, newItem]);
       setGroceryItem('');
+      setQuantity('');
     }
   };
 
   const handlePlaceOrder = () => {
-    // Your logic for placing the order goes here
-    alert('Order placed successfully!');
+    toast.success('Order placed successfully!');
     setGroceryList([]);
   };
 
@@ -28,12 +36,25 @@ const OrderGroceriesPage = () => {
   return (
     <div id="order-groceries" className="h-screen container mx-auto mt-8 p-8 bg-gray-100 rounded-lg">
       <h1 className="text-3xl font-bold mb-4 text-center mt-[300px]">Order Groceries</h1>
-      <div className="flex items-center justify-center mb-4">
+      <div className="flex flex-col items-center justify-center mb-4">
+        <label htmlFor="groceryItem" className="mb-2">Item:</label>
         <input
           type="text"
-          className="border border-gray-300 px-4 py-2 mr-2 rounded"
+          id="groceryItem"
+          name="groceryItem"
+          className="border border-gray-300 px-4 py-2 mb-2 rounded"
           placeholder="Enter grocery item"
           value={groceryItem}
+          onChange={handleChange}
+        />
+        <label htmlFor="quantity" className="mb-2">Quantity:</label>
+        <input
+          type="text"
+          id="quantity"
+          name="quantity"
+          className="border border-gray-300 px-4 py-2 mb-2 rounded"
+          placeholder="Enter quantity"
+          value={quantity}
           onChange={handleChange}
         />
         <button

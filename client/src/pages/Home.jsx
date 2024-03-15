@@ -17,10 +17,6 @@ const Home = () => {
             <FaShoppingCart className="mr-2" />
             Order Groceries
           </a>
-          <a href="#shopping" className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center">
-            <FaShoppingBasket className="mr-2" />
-            Shopping
-          </a>
           <a href="#order-medicines" className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center">
             <FaPills className="mr-2" />
             Order Medicines
@@ -36,14 +32,6 @@ const Home = () => {
           <a href="#find-services" className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center">
             <FaMapMarkerAlt className="mr-2" />
             Find Nearby Services
-          </a>
-          <a href="#about-us" className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center">
-            <FaInfoCircle className="mr-2" />
-            About Us
-          </a>
-          <a href="#faqs" className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center">
-            <FaQuestionCircle className="mr-2" />
-            FAQs
           </a>
           <a href="#contact-us" className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center">
             <FaEnvelope className="mr-2" />
