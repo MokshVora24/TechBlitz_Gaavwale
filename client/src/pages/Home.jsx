@@ -5,8 +5,10 @@ import bgImage from "../assets/bgimage.jpeg";
 const Home = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-16 flex justify-center items-center"
-        style={{ backgroundImage: `url(${bgImage})`, backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
+      style={{
+        backgroundImage: `url(${bgImage})`, backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-slate-100 mb-8 text-center">
@@ -37,6 +39,7 @@ const Home = () => {
             <FaEnvelope className="mr-2" />
             Contact Us
           </a>
+
         </div>
       </div>
     </div>

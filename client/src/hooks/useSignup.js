@@ -5,7 +5,7 @@ import { useAuthContext } from "../context/AuthContext.jsx";
 
 const useSignup = () => {
   const [loading, setLoading] = useState(false);
-  const { setAuthUser } = useAuthContext();
+  const setAuthUser = useAuthContext();
 
   const signup = async ({
     fullName,
@@ -30,7 +30,7 @@ const useSignup = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          fullName: fullName,
+          fullName,
           username,
           password,
           confirmPassword,
