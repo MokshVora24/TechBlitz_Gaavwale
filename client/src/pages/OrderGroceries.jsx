@@ -1,50 +1,50 @@
 import React, { useState } from 'react';
 
-const OrderMedicinePage = () => {
-  const [medicine, setMedicine] = useState('');
-  const [medicineList, setMedicineList] = useState([]);
+const OrderGroceriesPage = () => {
+  const [groceryItem, setGroceryItem] = useState('');
+  const [groceryList, setGroceryList] = useState([]);
 
   const handleChange = (e) => {
-    setMedicine(e.target.value);
+    setGroceryItem(e.target.value);
   };
 
-  const handleAddMedicine = () => {
-    if (medicine.trim() !== '') {
-      setMedicineList([...medicineList, medicine]);
-      setMedicine('');
+  const handleAddGrocery = () => {
+    if (groceryItem.trim() !== '') {
+      setGroceryList([...groceryList, groceryItem]);
+      setGroceryItem('');
     }
   };
 
   const handlePlaceOrder = () => {
     // Your logic for placing the order goes here
     alert('Order placed successfully!');
-    setMedicineList([]);
+    setGroceryList([]);
   };
 
   const handleClearList = () => {
-    setMedicineList([]);
+    setGroceryList([]);
   };
 
   return (
-    <div id="order-medicines" className="h-screen container mx-auto mt-8 p-8 bg-gray-100 rounded-lg">
-      <h1 className="text-3xl font-bold mb-4 text-center mt-[300px]">Order Medicines</h1>
+    <div id="order-groceries" className="h-screen container mx-auto mt-8 p-8 bg-gray-100 rounded-lg">
+      <h1 className="text-3xl font-bold mb-4 text-center mt-[300px]">Order Groceries</h1>
       <div className="flex items-center justify-center mb-4">
         <input
           type="text"
           className="border border-gray-300 px-4 py-2 mr-2 rounded"
-          placeholder="Enter medicine name"
-          value={medicine}
+          placeholder="Enter grocery item"
+          value={groceryItem}
           onChange={handleChange}
         />
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-          onClick={handleAddMedicine}
+          onClick={handleAddGrocery}
         >
           Add
         </button>
       </div>
       <ul className="mb-4">
-        {medicineList.map((item, index) => (
+        {groceryList.map((item, index) => (
           <li key={index} className="mb-2">
             {item}
           </li>
@@ -68,4 +68,4 @@ const OrderMedicinePage = () => {
   );
 };
 
-export default OrderMedicinePage;
+export default OrderGroceriesPage;
