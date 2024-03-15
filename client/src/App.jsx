@@ -15,7 +15,6 @@ function App() {
 
     <>
 
-      {/* <MapboxComponent /> */}
 
       <BrowserRouter>
 
@@ -26,6 +25,7 @@ function App() {
             <HeroScrollDemo href="#our-volunteers" />
             <OrderMedicinePage href="#order-medicines" />
             <OrderGroceriesPage href="#order-groceries" />
+            <MapboxComponent />
           </>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
