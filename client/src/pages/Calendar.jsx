@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -6,7 +6,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 const localizer = momentLocalizer(moment);
 
 const MyCalendar = () => {
-  const events = [
+  const [events, setEvents] = useState([
     {
       title: 'Event 1',
       start: new Date(2024, 3, 1),
@@ -17,88 +17,73 @@ const MyCalendar = () => {
       start: new Date(2024, 3, 7),
       end: new Date(2024, 3, 8),
     },
-    // Add 15 more dummy events
-    {
-      title: 'Event 3',
-      start: new Date(2024, 3, 11),
-      end: new Date(2024, 3, 12),
-    },
-    {
-      title: 'Event 4',
-      start: new Date(2024, 3, 15),
-      end: new Date(2024, 3, 16),
-    },
-    {
-      title: 'Event 5',
-      start: new Date(2024, 3, 18),
-      end: new Date(2024, 3, 19),
-    },
-    {
-      title: 'Event 6',
-      start: new Date(2024, 3, 22),
-      end: new Date(2024, 3, 23),
-    },
-    {
-      title: 'Event 7',
-      start: new Date(2024, 3, 25),
-      end: new Date(2024, 3, 26),
-    },
-    {
-      title: 'Event 8',
-      start: new Date(2024, 3, 28),
-      end: new Date(2024, 3, 29),
-    },
-    {
-      title: 'Event 9',
-      start: new Date(2024, 4, 2),
-      end: new Date(2024, 4, 3),
-    },
-    {
-      title: 'Event 10',
-      start: new Date(2024, 4, 6),
-      end: new Date(2024, 4, 7),
-    },
-    {
-      title: 'Event 11',
-      start: new Date(2024, 4, 10),
-      end: new Date(2024, 4, 11),
-    },
-    {
-      title: 'Event 12',
-      start: new Date(2024, 4, 14),
-      end: new Date(2024, 4, 15),
-    },
-    {
-      title: 'Event 13',
-      start: new Date(2024, 4, 18),
-      end: new Date(2024, 4, 19),
-    },
-    {
-      title: 'Event 14',
-      start: new Date(2024, 4, 22),
-      end: new Date(2024, 4, 23),
-    },
-    {
-      title: 'Event 15',
-      start: new Date(2024, 4, 26),
-      end: new Date(2024, 4, 27),
-    },
-    {
-      title: 'Event 16',
-      start: new Date(2024, 4, 30),
-      end: new Date(2024, 4, 31),
-    },
-  ];
+  ]);
+
+  const [newEvent, setNewEvent] = useState({
+    title: '',
+    start: new Date(),
+    end: new Date(),
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewEvent((prevEvent) => ({
+      ...prevEvent,
+      [name]: value,
+    }));
+  };
+
+  const handleAddEvent = () => {
+    setEvents([...events, newEvent]);
+    setNewEvent({
+      title: '',
+      start: new Date(),
+      end: new Date(),
+    });
+  };
 
   return (
-    <div style={{ height: 500 }}>
-      <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-        className='h-[700px] p-10'
-      />
+    <div id="request-volunteer" className="container mx-auto mt-8 p-8 bg-gray-100 rounded-lg">
+      <h1 className="text-3xl font-bold mb-4 text-center">Calendar</h1>
+      <div className="mb-4">
+        <input
+          type="text"
+          name="title"
+          placeholder="Event title"
+          value={newEvent.title}
+          onChange={handleChange}
+          className="border border-gray-300 px-4 py-2 mr-2 rounded"
+        />
+        <input
+          type="datetime-local"
+          name="start"
+          value={moment(newEvent.start).format('YYYY-MM-DDTHH:mm')}
+          onChange={handleChange}
+          className="border border-gray-300 px-4 py-2 mr-2 rounded"
+        />
+        <input
+          type="datetime-local"
+          name="end"
+          value={moment(newEvent.end).format('YYYY-MM-DDTHH:mm')}
+          onChange={handleChange}
+          className="border border-gray-300 px-4 py-2 mr-2 rounded"
+        />
+        <button
+          onClick={handleAddEvent}
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Add Event
+        </button>
+      </div>
+      <div style={{ height: 500 }}>
+        <Calendar
+          localizer={localizer}
+          events={events}
+          startAccessor="start"
+          endAccessor="end"
+          className="h-[500px] p-10"
+        />
+      </div>
     </div>
   );
 };

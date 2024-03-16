@@ -34,7 +34,7 @@ const OrderGroceriesPage = () => {
   };
 
   return (
-    <div id="order-groceries" className="h-screen container mx-auto mt-8 p-8 bg-gray-100 rounded-lg">
+    <div id="order-groceries" className="h-1/2 container mx-auto p-8 bg-white rounded-lg">
       <h1 className="text-3xl font-bold mb-4 text-center mt-[300px]">Order Groceries</h1>
       <div className="flex flex-col items-center justify-center mb-4">
         <label htmlFor="groceryItem" className="mb-2">Item:</label>

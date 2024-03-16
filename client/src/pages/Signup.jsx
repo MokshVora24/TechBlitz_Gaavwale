@@ -24,16 +24,16 @@ const Signup = () => {
     }
 
     return (
-        <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-            <div className='w-full p-6 rounded-lg shadow-md bg-grey-900 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-                <h1 className='text-3xl font-semibold text-center text-white'>
-                    Sign Up <span className='text-blue-500'>Saathi</span>
+        <div className='h-screen w-96 flex flex-col items-center justify-center min-w-96 mx-auto'>
+            <div className='w-full p-6 rounded-lg shadow-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
+                <h1 className='text-3xl font-semibold text-center text-gray-400'>
+                    Sign Up <span className='text-blue-500 text-2xl mt-5 flex justify-center'>Saathi</span>
                 </h1>
 
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label className='label p-2'>
-                            <span className='text-base text-white label-text'>Full Name</span>
+                            <span className='text-base text-gray-400 label-text'>Full Name</span>
                         </label>
                         <input
                             type="text"
@@ -45,7 +45,7 @@ const Signup = () => {
                     </div>
                     <div>
                         <label className='label p-2'>
-                            <span className='text-base text-white label-text'>Username</span>
+                            <span className='text-base text-gray-400 label-text'>Username</span>
                         </label>
                         <input
                             type="text"
@@ -57,7 +57,7 @@ const Signup = () => {
                     </div>
                     <div>
                         <label className='label p-2'>
-                            <span className='text-base text-white label-text'>Password</span>
+                            <span className='text-base text-gray-400 label-text'>Password</span>
                         </label>
                         <input
                             type="password"
@@ -69,7 +69,7 @@ const Signup = () => {
                     </div>
                     <div>
                         <label className='label p-2'>
-                            <span className='text-base text-white label-text'>Confirm Password</span>
+                            <span className='text-base text-gray-400 label-text'>Confirm Password</span>
                         </label>
                         <input
                             type="password"
@@ -80,12 +80,12 @@ const Signup = () => {
                         />
                     </div>
 
-                    <Link to='/login' href="#" className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block text-white'>
+                    <Link to='/login' href="#" className='text-sm hover:underline hover:text-blue-600 mt-2 inline-block text-gray-400'>
                         Already have an account?
                     </Link>
                     <div>
 
-                        <Link to="/"><button className='btn btn-block btn-sm bg-blue-600 text-white mt-5'
+                        <Link to="/"><button className='btn btn-block btn-sm bg-blue-600 text-gray-400 mt-5'
                             disabled={loading}>
                             {loading ? <span className='loading loading-spinner' ></span> : "Sign Up"}
                         </button></Link>

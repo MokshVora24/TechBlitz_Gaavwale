@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaShoppingCart, FaShoppingBasket, FaPills, FaHandHoldingHeart, FaUserFriends, FaMapMarkerAlt, FaInfoCircle, FaQuestionCircle, FaEnvelope } from 'react-icons/fa';
+import { FaShoppingCart, FaPills, FaHandHoldingHeart, FaUserFriends, FaMapMarkerAlt, FaCalendarAlt, FaEnvelope } from 'react-icons/fa';
 import bgImage from "../assets/bgimage.jpeg";
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-slate-100 mb-8 text-center">
+        <h1 className="text-4xl font-bold text-white mb-8 text-center">
           ELDER CARE SERVICES
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -24,8 +24,8 @@ const Home = () => {
             Order Medicines
           </a>
           <a href="#request-volunteer" className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center">
-            <FaHandHoldingHeart className="mr-2" />
-            Request Volunteer
+            <FaCalendarAlt className="mr-2" />
+            Calendar
           </a>
           <a href="#our-volunteers" className="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-6 rounded-lg flex items-center justify-center">
             <FaUserFriends className="mr-2" />

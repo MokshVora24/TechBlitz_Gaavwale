@@ -10,8 +10,8 @@ const MapComponent = () => {
   };
 
   const center = {
-    lat: -34.397,
-    lng: 150.644,
+    lat: 19.3839,
+    lng: 72.8287,
   };
 
   const handleMapClick = (e) => {
@@ -29,7 +29,7 @@ const MapComponent = () => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDDLv9kVDyasgpYJ7zzzFcOM3R4cTHFB5U">
+    <LoadScript id='find-services' googleMapsApiKey="AIzaSyDDLv9kVDyasgpYJ7zzzFcOM3R4cTHFB5U">
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={center}

@@ -9,6 +9,7 @@ import OrderGroceriesPage from "./pages/OrderGroceries";
 
 import { Toaster } from "react-hot-toast";
 import MyCalendar from "./pages/Calendar.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
 
 // import './App.css'
 import Login from './pages/Login'
@@ -17,7 +18,7 @@ import Signup from './pages/Signup'
 
 function App() {
   return (
-    <>
+    <div className="bg-white">
 
 
       <BrowserRouter>
@@ -26,21 +27,21 @@ function App() {
           <Route path="/" element={<>
             <Navbar />
             <Home />
-            <HeroScrollDemo href="#our-volunteers" />
-            <OrderMedicinePage href="#order-medicines" />
             <OrderGroceriesPage href="#order-groceries" />
-            <MapboxComponent />
-            <MyCalendar />
+            <OrderMedicinePage href="#order-medicines" />
+            <MyCalendar href="#request-volunteer"/>
+            <HeroScrollDemo href="#our-volunteers" />
+            <MapboxComponent href="#find-services"/>
+            <ContactUs href="#contact-us"/>
             <Toaster position="top-center" reverseOrder={false} />
           </>} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
-      {/* <Toaster /> */}
-    </>
+    </div>
   )
 }
 
-export default App
+export default App;
 

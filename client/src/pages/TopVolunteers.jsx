@@ -24,7 +24,7 @@ export default function HeroScrollDemo() {
 
 export const users = [
     {
-      name: "Manu Arora",
+      name: "Ashley Singh",
       designation: "Volunteer, Elder Care Services",
       image: "https://picsum.photos/id/10/300/300",
       badge: "Caregiver",
