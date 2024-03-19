@@ -27,7 +27,7 @@ const OrderMedicinePage = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+    <div id='order-medicines' className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
       <div className="container mx-auto mt-8 p-8 bg-white rounded-lg shadow-lg max-w-md w-full">
         <h1 className="text-3xl font-bold mb-4 text-center text-blue-600">Order Medicines</h1>
         <div className="flex items-center justify-center mb-4">

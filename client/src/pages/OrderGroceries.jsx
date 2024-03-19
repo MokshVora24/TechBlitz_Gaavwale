@@ -34,7 +34,7 @@ const OrderGroceriesPage = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+    <div id='order-groceries' className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
       <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
         <h1 className="text-3xl font-bold mb-6 text-center text-blue-600">Order Groceries</h1>
         <div className="mb-6">

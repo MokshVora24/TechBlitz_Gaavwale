@@ -6,7 +6,7 @@ const MapComponent = () => {
 
   const mapContainerStyle = {
     width: '100%',
-    height: '100vh', // Set the map height to 100vh
+    height: '100vh', 
   };
 
   const center = {

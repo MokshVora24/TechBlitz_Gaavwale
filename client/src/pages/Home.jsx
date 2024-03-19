@@ -39,7 +39,6 @@ const Home = () => {
             <FaEnvelope className="mr-2" />
             Contact Us
           </a>
-
         </div>
       </div>
     </div>

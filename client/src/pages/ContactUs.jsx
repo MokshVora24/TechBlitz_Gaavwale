@@ -15,15 +15,13 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your logic to handle form submission (e.g., sending data to backend)
     console.log(formData);
-    // Clear the form after submission
     setFormData({ name: '', email: '', message: '' });
     toast.success("Message sent successfully!");
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 flex flex-col justify-center items-center">
+    <div id='contact-us' className="min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 flex flex-col justify-center items-center">
       <h1 className="text-4xl font-bold text-white mb-8">Contact Us</h1>
       <div className="bg-white rounded-lg p-8 shadow-lg w-full max-w-lg">
         <form onSubmit={handleSubmit} className="space-y-4">
